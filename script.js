@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import {LitElement, html, css} from 'https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm'
 import safeHtml from 'https://cdn.jsdelivr.net/npm/safe-html@1.0.0/+esm';
 
 export class Posts extends LitElement {
@@ -89,7 +89,6 @@ export class Posts extends LitElement {
        <form @submit=${this.handleFormSubmit}>
         <label for="name">Enter WordPress URL:</label>
         <input type="text" id="name" name="name" required />
-        
         <input type="submit" value="Submit" />
       </form>
       ${posts}`;
