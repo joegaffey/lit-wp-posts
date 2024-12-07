@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import safeHtml from 'https://cdn.jsdelivr.net/npm/safe-html@1.0.0/safe-html.min.js';
+import safeHtml from 'https://cdn.jsdelivr.net/npm/safe-html@1.0.0/+esm';
 
 export class Posts extends LitElement {
   static properties = {
@@ -78,8 +78,8 @@ export class Posts extends LitElement {
       <ul class="post-list">
       ${this.posts.map((post) =>
           html`<li>
-          <h3>${post.title.rendered}</h3>
-            <p>${unsafeHTML(post.excerpt.rendered)}</p>
+          <h3>${safeHtml(post.title.rendered)}</h3>
+            <p>${safeHtml(post.excerpt.rendered)}</p>
           </li>`
         )}
       </ul>`
